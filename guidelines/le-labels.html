@@ -65,7 +65,6 @@ f.additionalLinks = ''
 <section id="question">
 <h2>Question</h2>
   <p>The <span class="highlight1"><span style="background-color: #cc317c; padding:2px 4px; border-radius:5px; color:white; font-style:normal;font-weight: bold; white-space: nowrap;">question</span></span> label should be attached to every GitHub issue that asks a question of the expert community about how a script works.</p>
-<p>Issues with this label are also tracked in the i18n WG tracker repository.</p>
 </section>
 
 
@@ -77,7 +76,7 @@ f.additionalLinks = ''
 <p>When using this label, you need to also use the following:</p>
 <ul>
 <li>a <span class="highlight1"><span style="background-color: #c2e0c6; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">doc:</span></span> label</li>
-<li>an <span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:</span></span> label</li>
+<li>an <span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:</span></span> label</li>
 <li>a <span class="highlight1"><span style="background-color: white; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">p:</span></span> label</li>
 </ul>
 </section>
@@ -105,41 +104,66 @@ f.additionalLinks = ''
 
 
 
+
+
+<section id="implementation-issue">
+<h2>X: labels</h2>
+
+<p>The <span class="highlight1"><span style="background-color: #e99695; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">x:</span></span> label indicates browser engines or W3C technologies affected by a particular gap-analysis issue. It is only used with the <span class="highlight1"><span style="background-color: #e99695; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">gap</span></span> label. These labels should be applied to all gap labelled issues if the technology doesn't resolve the gap. This provides a simple way of filtering the issues in the LE pipeline by technology.</p>
+</section>
+
+
+
 <section id="schedule-review">
 <h2>I: labels</h2>
   <p>If you use a <span class="highlight1"><span style="background-color: #e99695; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">gap</span></span> label, you must also use one of these labels. They indicate the section into which the gap-analysis content will be put. The values correspond to sections in the Language Enablement Index, which are the same as those in the gap-analysis documents.</p>
 <p>However, it is also recommended that you use these labels with all other technical issues. That makes it possible to filter on a particular type of feature all the issues in the repo.</p>
-<p>The values are as follows. The label is shown, followed by the anchor of the relevant section in the Index, and the current title of the Index section (which may change over time).</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:vertical_text</span></span> #vertical_text, Vertical text</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:bidirectional_text</span></span> #bidi_text, Bidirectional text</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:characters_and_encodings</span></span> #charset, Characters &amp; encoding</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:fonts</span></span> #fonts, Fonts</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:font_styles_weight_etc</span></span> #font_style, Font styles, weight, etc.</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:glyph_shaping_positioning</span></span> #glyphs, Glyph shaping &amp; positioning</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:cursive</span></span> #cursive, Cursive text</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:vertical_text</span></span> #baseline, Baselines, line height, etc.</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:transforming_characters</span></span> #transforms, Transforming characters</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:grapheme_word_segmentation</span></span> #segmentation, Grapheme/word segmentation &amp; selection</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:inline_features_punctuation</span></span> #punctuation_etc, Inline features &amp; punctuation</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:text_decoration</span></span> #text_decoration, Text decoration</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:quotations</span></span> #quotations, Quotations</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:inline_notes_annotations</span></span> #inline_notes, Inline notes &amp; annotations</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:data_formats_numbers</span></span> #data_formats, Data formats &amp; numbers</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:line_breaking</span></span> #line_breaking, Line breaking</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:hyphenation</span></span> #hyphenation, Hyphenation</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:text_align_justification</span></span> #justification, Text alignment &amp; justification</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:letter_spacing</span></span> #spacing, Letter spacing</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:lists_counters_etc</span></span> #lists, Lists, counters, etc.</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:styling_initials</span></span> #initials, Styling initials</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:page_layout_progression</span></span> #page_layout, General page layout &amp; progression</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:footnotes_endnotes_etc</span></span> #footnotes_etc, Footnotes, endnotes, etc.</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:page_headers_footers_etc</span></span> #headers_footers, Page headers, footers, etc.</p>
-<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:forms_user_interaction</span></span> #interaction, Forms &amp; user interaction</p>
+<p>The values are as follows. The label is shown, followed by the current title of the  sections in the LE Index and the LReq pages (which may change over time).</p>
+
+<p><mark>Text direction</mark></p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:vertical_text</span></span> Vertical text</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:bidi_text</span></span>  Bidirectional text</p>
+
+<p><mark>Glyph shaping &amp; positioning</mark></p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:fonts</span></span> #fonts, Fonts &amp; font styles</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:glyphs</span></span>  Context-based shaping &amp; positioning</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:cursive</span></span>  Cursive text</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:letterforms</span></span>  Letterform slopes, weights, &amp; italics.</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:transforms</span></span>  Transforming characters</p>
+
+<p><mark>Typographic units</mark></p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:encoding</span></span>  Characters &amp; encoding</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:segmentation</span></span>  Grapheme/word segmentation &amp; selection</p>
+
+<p><mark>Punctuation &amp; inline features</mark></p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:punctuation_etc</span></span>  Phrase &amp; section boundaries</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:quotations</span></span>  Quotations &amp; citations</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:emphasis</span></span>  Emphasis &amp; highlighting</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:abbrev</span></span>  Abbreviation, ellipsis, &amp; repetition</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:inline_notes</span></span>  Inline notes &amp; annotations</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:text_decoration</span></span>  Other inline features</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:data_formats</span></span>  Data formats &amp; numbers</p>
+
+<p><mark>Line &amp; paragraph layout</mark></p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:line_breaking</span></span>  Line breaking</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:hyphenation</span></span>  Hyphenation (this should always be in addition to i:line_breaking!)</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:justification</span></span>  Text alignment &amp; justification</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:spacing</span></span>  Text spacing</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:baselines</span></span>  Baselines, line height, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:lists</span></span>  Lists, counters, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:initials</span></span>  Styling initials</p>
+
+<p><mark>Page &amp; book layout</mark></p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:page_layout</span></span>  General page layout &amp; progression</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:grids</span></span>  Grids &amp; tables.</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:footnotes_etc</span></span>  Footnotes, endnotes, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:headers_footers</span></span>  Page headers, footers, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:interaction</span></span>  Forms &amp; user interaction</p>
 </section>
 
 
 <section id="notify">
-<h2>Useful-discussion</h2>
+<h2>l: labels</h2>
 <p>These <span class="highlight1"><span style="background-color: #d4c5f9; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">l:</span></span> labels indicate the language(s) that are relevant to the issue thread. They can be used to filter the issues for a particular language.</p>
 <p>A repository that only works on a single language may not use this label.</p>
 <p>It's recommended to add this label to all technical discussions.</p>
@@ -147,7 +171,7 @@ f.additionalLinks = ''
 
 
 <section id="useful">
-<h2>l: labels</h2>
+<h2>Useful-discussion</h2>
 <p>The <span class="highlight1"><span style="background-color: #fce8c4; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">useful-discussion</span></span> label can be added to a technical discussion that contains useful information, pictures, example, etc. It is especially useful if not all that information will find its way into a document, since the Language Enablement Index points to useful discussion threads.</p>
 </section>
 
