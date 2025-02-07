@@ -265,7 +265,8 @@ function buildSection (theData, sectionId, doc, repo) {
 			body = body.replace(test,'')
 
 			// split into paragraphs
-			out += body.replace(/\r\n\r\n/g,'</p><p>')
+			//out += body.replace(/\r\n\r\n/g,'</p><p>')
+			out += body.replace(/\n\n/g,'</p><p>')
 			out += '</p>\n'
 			out += '</section>\n'
 			}
