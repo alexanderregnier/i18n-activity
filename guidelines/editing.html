@@ -680,6 +680,33 @@ samp, kbd {
 
 
 
+<section id="darkmode">
+<h2>Adding dark mode support for ReSpec documents</h2>
+  <p>To add support for dark mode in ReSpec documents, add the following code to the <code class="kw" translate="no">head</code> element:</p>
+  
+  <pre><code class="language-html">&lt;meta name="color-scheme" content="light dark"&gt;</code></pre>
+  
+  <p>All colors in your <code class="kw" translate="no">local.css</code> should be expressed using CSS variables to support both light and dark modes:</p>
+  
+  <pre><code class="language-css">:root {
+	--blue: blue;
+}
+
+body.darkmode {
+	--blue: rgb(51 125 255);
+}
+
+.bigtext {
+    color: var(--blue);
+}</code></pre>
+
+  <p>Define your colors in the <code class="kw" translate="no">:root</code> selector for light mode, and override them in the <code class="kw" translate="no">body.darkmode</code> selector for dark mode. Then use these variables throughout your styles.</p>
+</section>
+
+
+
+
+
 <section id="process">
 <h2>Creating a new article</h2>
 
