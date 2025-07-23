@@ -12,15 +12,15 @@ f.directory = 'guidelines'+'/'; // the path to this file, not including /Interna
 f.filename = 'issues'; // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
 f.previousauthors = ''; // as above
-f.modifiers = ''; // people making substantive changes, and their affiliation
+f.modifiers = 'Fuqiao Xue, W3C'; // people making substantive changes, and their affiliation
 f.searchString = 'level2-issues'; // blog search string - usually the filename without extensions
 f.firstPubDate = '2015-12-16'; // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2016-10-11', time:'07:50'}  // date and time of latest substantive changes to this document
+f.lastSubstUpdate = { date:'2025-07-23', time:'07:50'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
 f.path = '../' // what you need to prepend to a URL to get to the /International directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2025-01-03', time:'12:18'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2025-07-23', time:'12:18'} // date and time of latest edits to this document/translation
 f.contributors = ''; // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 
@@ -54,8 +54,29 @@ f.additionalLinks = ''
 
 <div id="mainLayout">
 <section>
-<p>The W3C Internationalization Activity uses GitHub issues for technical discussions. This page provides an introduction to working with  issues for those who are new to GitHub.</p>
-<p>The first thing to say is that <strong>working with GitHub issues is very easy and intuitive</strong>! GitHub can occasionally involve complex behaviours when dealing with software or document change management, but <strong>there is nothing complex about working with GitHub issues</strong>.</p>
+<h2>What is GitHub and why use issues?</h2>
+<p><strong>GitHub</strong> is a web platform where people collaborate on projects. <strong>GitHub issues</strong> are like discussion threads where people can:</p>
+<ul>
+<li>Report problems or bugs</li>
+<li>Suggest improvements</li>
+<li>Discuss ideas</li>
+</ul>
+<p>The W3C Internationalization Activity uses GitHub issues for technical discussions. This page provides an introduction to working with issues for those who are new to GitHub.</p>
+<p>The first thing to say is that <strong>working with GitHub issues is very easy and intuitive</strong>! GitHub can occasionally involve complex behaviours when dealing with software or document change management, but <strong>there is nothing complex about working with GitHub issues</strong>. If you can use email or comment on a blog post, you can use GitHub issues!</p>
+</section>
+
+<section id="account">
+<h2>Do I need an account?</h2>
+<p><strong>To view issues:</strong> No account needed! You can read all discussions without signing up.</p>
+<p><strong>To comment or create issues:</strong> You'll need a GitHub account.</p>
+<p>To create an account:</p>
+<ol>
+<li>Go to <a href="https://github.com">github.com</a></li>
+<li>Click the "Sign up" button</li>
+<li>Choose a username, enter your email, and create a password</li>
+<li>Verify your email address when GitHub sends you a confirmation</li>
+</ol>
+<p>That's it! You can start participating in discussions immediately.</p>
 </section>
 
 
@@ -63,14 +84,28 @@ f.additionalLinks = ''
 
 
 <section id="setup">
-  <h2>Viewing issues</h2>
-  <p>Each GitHub repository has a prominent link to a set of issues. The picture below shows the home page of the repository for the <a href="https://github.com/w3c/jlreq/">Japanese Layout task force</a>. The blue circle   shows where to click to get to the issue list.</p>
-<p><img src="images/issue-button.png" style="width: 100%;" alt="Diagram showing parts of the github setup."/></p>
-<p>After clicking on that tab, you will see a page like this, which lists all currently open issues. (Clicking on &quot;2 Closed&quot; will show any closed issues.)</p>
-<p><img src="images/issue-list.png" style="width: 100%;" alt="Diagram showing parts of the github setup."/></p>
-<p>The contents of the list can be filtered or ordered using the controls near the top of the page, if needed. You can view all open issues with a specific label by clicking on the label (eg. <span style="background-color:red; color: white; padding: 2px 4px;">question</span>).</p>
-<p>Click on an issue title to view the thread. For example, here's what you'll see if you click on the 3rd title in the above list.</p>
+  <h2>Finding and viewing issues</h2>
+
+  <h3>Step 1: Navigate to the Issues tab</h3>
+  <p>Each GitHub repository (project) has a prominent link to its issues. A <strong>repository</strong> is like a project folder that contains all the files and discussions for a particular topic.</p>
+  <p>The picture below shows the home page of the repository for the <a href="https://github.com/w3c/jlreq/">Japanese Layout task force</a>. The blue circle shows where to click to get to the issue list.</p>
+<p><img src="images/issue-button.png" style="width: 100%;" alt="Screenshot of GitHub repository homepage with a blue circle highlighting the 'Issues' tab in the navigation menu"/></p>
+
+  <h3>Step 2: Browse the issue list</h3>
+  <p>After clicking on that tab, you will see a page like this, which lists all currently open issues.</p>
+<p><img src="images/issue-list.png" style="width: 100%;" alt="Screenshot of GitHub issues list page showing multiple open issues with titles, labels, and metadata"/></p>
+<p><strong>Understanding the issue list:</strong></p>
+<ul>
+<li><strong>Open issues</strong> are active discussions (shown by default)</li>
+<li><strong>Closed issues</strong> are resolved or completed discussions (click "X Closed" to see them)</li>
+<li><strong>Labels</strong> are colored tags that categorize issues (like <span style="background-color:red; color: white; padding: 2px 4px;">question</span> or <span style="background-color:blue; color: white; padding: 2px 4px;">bug</span>)</li>
+</ul>
+<p>You can filter the list by clicking on labels or using the search box at the top.</p>
+
+  <h3>Step 3: Read an issue discussion</h3>
+  <p>Click on any issue title to view the full discussion thread. For example, here's what you'll see if you click on the 3rd title in the above list.</p>
 <p><img src="images/issue-page.png" style="width: 100%;" alt="Diagram showing parts of the github setup."/></p>
+<p>This page works like a forum thread or email conversation - you can read all the comments from top to bottom.</p>
 </section>
 
 
@@ -93,7 +128,7 @@ f.additionalLinks = ''
 
 <section id="forking">
 <h2>Following a discussion</h2>
-  <p>If you contribute a comment to an issue, you will automatically be subscribed to that issue and will therefore receive email notifications as new comments are added.</p>
+<p>If you contribute a comment to an issue, you will automatically be subscribed to that issue and will therefore receive email notifications as new comments are added.</p>
 <p>If you haven't contributed a comment, GitHub provides the <img src="images/subscribe.png" alt="Subscribe" style="vertical-align: middle;">button (which notifies you of changes to this particular issue only), or the <img src="images/watch.png" alt="Watch" style="vertical-align: middle;"> button at the top of the page (which notifies you of changes to any issues in the repository, as well as pull requests).</p>
 <p>You should, however, also consider subscribing to the mailing list for the repository you are following. That mailing list should be indicated in the explanatory text on the repository's home page. When subscribed to that list you will receive a (single) daily digest containing links to all issues in the repository that have changed over the past 24 hours. But the digests will also point you to related issues in other repositories too (such as CSS and HTML repos).</p>
 </section>
@@ -102,7 +137,7 @@ f.additionalLinks = ''
 
 <section id="cloning">
 <h2>Creating a new issue</h2>
-  <p>Anyone can raise a new issue. Simply click on the <span style="color:white; background-color:#30C553; padding: 2px 4px; border-radius: 4px;">New issue</span> button, add a short but meaningful title, and write  your comment in the box provided.</p>
+<p>Anyone can raise a new issue. Simply click on the <span style="color:white; background-color:#30C553; padding: 2px 4px; border-radius: 4px;">New issue</span> button, add a short but meaningful title, and write  your comment in the box provided.</p>
 <p><img src="images/new-issue.png" style="width: 100%;" alt="Picture of a new issue awaiting input."/></p>
   <p>Only  people with administrative access are able to assign labels to an issue. They will be notified that you have created a new issue, and will decide which labels to assign to it.</p>
 </section>
@@ -126,6 +161,29 @@ f.additionalLinks = ''
 <p>You can attract someone's attention, even if they are not following this issue, by including an @ sign followed by their github id, eg. &quot;@r12a what do you think of this idea?&quot;. </p>
 </li>
   </ol>
+</section>
+
+<section id="glossary">
+<h2>Glossary</h2>
+<dl>
+<dt><strong>Repository (or "repo")</strong></dt>
+<dd>A project folder containing all files and discussions for a particular topic or project</dd>
+
+<dt><strong>Issue</strong></dt>
+<dd>A discussion thread about a specific topic, problem, or suggestion</dd>
+
+<dt><strong>Label</strong></dt>
+<dd>A colored tag that categorizes issues (like "bug", "question", or "enhancement")</dd>
+
+<dt><strong>Markdown</strong></dt>
+<dd>A simple way to format text using symbols like * for bold and > for quotes</dd>
+
+<dt><strong>Mention</strong></dt>
+<dd>Notifying someone by typing @ followed by their username</dd>
+
+<dt><strong>Fork</strong></dt>
+<dd>Making your own copy of a repository (not covered in this guide - used for code contributions)</dd>
+</dl>
 </section>
 
 </div>
