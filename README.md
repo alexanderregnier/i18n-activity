@@ -9,7 +9,7 @@ If you want to contribute to discussions pointed to by the issues in this repo, 
 
 ## Links
 - [Project radar](https://w3c.github.io/i18n-activity/projects/)
-- [Request a review page](https://www.w3.org/International/review-request)
+- [Request a review page](https://www.w3.org/International/i18n-drafts/pages/review-request.en)
 - [Review radar](https://github.com/orgs/w3c/projects/91/views/1)
 - [Review comment tracker](https://w3c.github.io/i18n-activity/reviews/)
 - [I18n document issues](https://w3c.github.io/i18n-activity/repostatus/)
