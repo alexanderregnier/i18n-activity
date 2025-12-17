@@ -14,6 +14,6 @@ If you want to contribute to discussions pointed to by the issues in this repo, 
 - [Review comment tracker](https://w3c.github.io/i18n-activity/reviews/)
 - [I18n document issues](https://w3c.github.io/i18n-activity/repostatus/)
 - [Article pipeline](https://github.com/orgs/w3c/projects/92/views/1)
-- [WG home page](https://w3c.github.io/i18n-activity/i18n-wg/)
+- [WG home page](https://www.w3.org/International/i18n-activity/i18n-wg/)
 - [Action tracker](https://github.com/w3c/i18n-actions/issues/)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
