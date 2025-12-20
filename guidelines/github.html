@@ -453,22 +453,17 @@ $ git push origin gh-pages</pre>
 
       <section id="liveview">
         <h3>See an HTML version of a page</h3>
-        <p>To see how your changes look in a browser before they are merged, you can use several methods:</p>
+        <p>To see how your changes look in a browser, you can use the following methods:</p>
         <ol>
           <li>
-            <p><strong>GitHub Pages:</strong> If your fork has GitHub Pages enabled, you can view your branch at
-              <code>https://myUserName.github.io/repoName/path/to/file.html</code>.
-            </p>
+            <p><strong>Netlify Deploy Preview:</strong> This is the recommended way to view changes in a pull request.
+              Once
+              you have created a pull request, Netlify will automatically build a preview of your changes. You can find
+              the link in a comment by the <strong>netlify</strong> bot.</p>
           </li>
           <li>
-            <p><strong>HTML Preview:</strong> Use a service like <a
-                href="https://htmlpreview.github.io/">htmlpreview.github.io</a> by prefixing the GitHub file URL: <br>
-              <code>https://htmlpreview.github.io/?https://github.com/myUserName/repoName/blob/myBranchName/fileName.html</code>
-            </p>
-          </li>
-          <li>
-            <p><strong>Local Server:</strong> If you have cloned the repo, you can simply open the HTML file in your
-              browser directly from your hard drive.</p>
+            <p><strong>Local Server:</strong> If you want to see your changes before committed and pushing them, you can
+              simply open the HTML file in your browser directly from your local repository on your computer.</p>
           </li>
         </ol>
       </section>
