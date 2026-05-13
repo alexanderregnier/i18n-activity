@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Working with ReSpec</title>
+<meta name="description" content="Helps members of the W3C Internationalization Activity work with ReSpec.">
+<script>
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'guidelines'+'/'; // the path to this file, not including /International or the file name
+f.filename = 'respec'; // the file name WITHOUT extensions
+f.authors = 'Fuqiao Xue, W3C'; // author(s) and affiliations
+f.previousauthors = ''; // as above
+f.modifiers = ''; // people making substantive changes, and their affiliation
+f.searchString = 'level2-respec'; // blog search string - usually the filename without extensions
+f.firstPubDate = '2026-05-13'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2026-05-13', time:'13:42'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2026-05-13', time:'13:42'} // date and time of latest edits to this document/translation
+f.contributors = ''; // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = '';
+
+f.additionalLinks = ''
+</script>
+<script src="respec-data/translations.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/sitepage-2022.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-2022.js"></script>
+<script src="../../i18n-drafts/javascript/prism.js"></script>
+
+<link rel="stylesheet" href="../../i18n-drafts/style/prism.css">
+<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2022.css">
+<link rel="copyright" href="#copyright"/>
+
+<link rel="stylesheet" href="respec-data/local.css">
+</head>
+
+<body>
+<header>
+  	<nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+	</header>
+<h1>Working with ReSpec</h1>
+
+
+<section id="sidebarExtras">
+</section>
+
+
+<div id="mainLayout">
+<section>
+<p><a href="https://respec.org/docs/" target="_blank">ReSpec</a> is a tool for writing technical specifications as ordinary HTML. You write a source HTML file, add a small configuration object, and ReSpec turns it into a formatted specification with title, table of contents, section numbering, references, definitions, cross-links, notes, and export tools.</p>
+<p>This tutorial walks through the basics needed to create and preview a ReSpec document.</p>
+</section>
+
+
+
+
+
+<section id="minimal-file">
+<h2>Create a minimal ReSpec file</h2>
+<p>Start with an HTML file such as <code class="kw" translate="no">index.html</code>.</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;My First Document&lt;/title&gt;
+
+  &lt;script
+    src="https://www.w3.org/Tools/respec/respec-w3c"
+    class="remove"
+    async&gt;&lt;/script&gt;
+
+  &lt;script class="remove"&gt;
+    var respecConfig = {
+      specStatus: "ED",
+      editors: [
+        {
+          name: "Your Name",
+          url: "https://example.com/"
+        }
+      ],
+      shortName: "my-first-spec",
+      github: "w3c/my-first-spec",
+      group: "i18n",
+      canonicalURI: "TR",
+      license: "w3c-software-doc"
+    };
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;section id="abstract"&gt;
+    &lt;p&gt;This document defines a small example specification.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section id="sotd"&gt;&lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Introduction&lt;/h2&gt;
+    &lt;p&gt;This is where the document begins.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section id="conformance"&gt;&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>The two script blocks are important:</p>
+<ul>
+<li>The first loads ReSpec.</li>
+<li>The second defines <code class="language-js" translate="no">respecConfig</code>, which tells ReSpec how to build the document.</li>
+</ul>
+<p>Use <code translate="no">var respecConfig</code>, not <code translate="no">const</code> or <code translate="no">let</code>. ReSpec reads the configuration from <code translate="no">window.respecConfig</code>.</p>
+<p>The <code class="kw" translate="no">class="remove"</code> attribute tells ReSpec to remove those authoring scripts from exported static HTML.</p>
+</section>
+
+
+
+
+
+<section id="preview">
+<h2>Preview the document locally</h2>
+<p>Do not open the file directly with <code class="kw" translate="no">file://</code>. Use a local HTTP server instead.</p>
+<p>If you have Python, you can run the following command from the directory containing your file:</p>
+
+<pre class="example"><code class="language-sh" translate="no">python3 -m http.server</code></pre>
+
+<p>Then open:</p>
+
+<pre class="example"><code class="language-text" translate="no">http://localhost:8000/</code></pre>
+
+<p>Serving the file over HTTP matters because ReSpec may fetch references, cross-reference data, issue information, includes, or other resources.</p>
+</section>
+
+
+
+
+
+<section id="configuration">
+<h2>Understand the basic configuration</h2>
+<p>A small configuration usually starts like this:</p>
+
+<pre class="example"><code class="language-js" translate="no">var respecConfig = {
+  specStatus: "ED",
+  editors: [{ name: "Your Name" }],
+  shortName: "my-spec",
+  github: "w3c/repo",
+  group: "i18n"
+};</code></pre>
+
+<p>Common beginner options:</p>
+<ul>
+<li><code class="kw" translate="no">specStatus</code>: the publication status. Use <code class="language-js" translate="no">"ED"</code> for an Editor's Draft while writing.</li>
+<li><code class="kw" translate="no">editors</code>: the people editing the document. Most W3C documents require at least one editor.</li>
+<li><code class="kw" translate="no">shortName</code>: the short identifier for the document.</li>
+<li><code class="kw" translate="no">github</code>: the repository used for feedback links and issue integration.</li>
+<li><code class="kw" translate="no">group</code>: the W3C group responsible for the document.</li>
+</ul>
+</section>
+
+
+
+
+
+<section id="sections">
+<h2>Write sections</h2>
+<p>ReSpec documents are HTML documents. Use <code class="kw" translate="no">section</code> elements with headings.</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;section&gt;
+  &lt;h2&gt;Concepts&lt;/h2&gt;
+  &lt;p&gt;A &lt;dfn&gt;widget&lt;/dfn&gt; is an object managed by this specification.&lt;/p&gt;
+
+  &lt;section class="informative"&gt;
+    &lt;h3&gt;Background&lt;/h3&gt;
+    &lt;p&gt;This section gives non-normative background information.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/section&gt;</code></pre>
+
+<p>ReSpec automatically numbers sections and builds a table of contents. If your document is normative, use <code class="kw" translate="no">class="informative"</code> for explanatory material that is not normative.</p>
+<p>If you link to a section with an empty link, ReSpec fills in the section number and title:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p&gt;See &lt;a href="#concepts"&gt;&lt;/a&gt;.&lt;/p&gt;</code></pre>
+</section>
+
+
+
+
+
+<section id="terms">
+<h2>Define and link terms</h2>
+<p>Use <code class="kw" translate="no">dfn</code> to define a term:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p&gt;A &lt;dfn&gt;request&lt;/dfn&gt; represents a pending operation.&lt;/p&gt;</code></pre>
+
+<p>Then link to it later:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p&gt;Each [=request=] has a state.&lt;/p&gt;</code></pre>
+
+<p>You can also use a plain HTML link:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p&gt;Each &lt;a&gt;request&lt;/a&gt; has a state.&lt;/p&gt;</code></pre>
+
+<p>If a term has multiple names, use <code class="kw" translate="no">data-lt</code>:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p&gt;A &lt;dfn data-lt="user agent|browser"&gt;user agent&lt;/dfn&gt; loads the page.&lt;/p&gt;</code></pre>
+
+<p>Now <code class="language-text" translate="no">[=user agent=]</code> and <code class="language-text" translate="no">[=browser=]</code> link to the same definition.</p>
+</section>
+
+
+
+
+
+<section id="cross-references">
+<h2>Link to other specifications</h2>
+<p>ReSpec can link to terms defined in other specifications. Enable cross-reference support in the configuration:</p>
+
+<pre class="example"><code class="language-js" translate="no">var respecConfig = {
+  xref: "web-platform"
+};</code></pre>
+
+<p>Then use ReSpec shorthand:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p&gt;Queue a task to [=fire an event=] at the {{Window}} object.&lt;/p&gt;</code></pre>
+
+<p>Common shorthand forms:</p>
+<table>
+<thead>
+<tr>
+<th>Shorthand</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-text" translate="no">[=term=]</code></td>
+<td>Link to a concept or definition.</td>
+</tr>
+<tr>
+<td><code class="language-text" translate="no">{{Interface}}</code></td>
+<td>Link to a WebIDL interface.</td>
+</tr>
+<tr>
+<td><code class="language-text" translate="no">{{Interface/member}}</code></td>
+<td>Link to a WebIDL attribute or method.</td>
+</tr>
+<tr>
+<td><code class="language-text" translate="no">[^element^]</code></td>
+<td>Link to an HTML or SVG element.</td>
+</tr>
+<tr>
+<td><code class="language-text" translate="no">[[HTML]]</code></td>
+<td>Add an informative reference.</td>
+</tr>
+<tr>
+<td><code class="language-text" translate="no">[[!RFC2119]]</code></td>
+<td>Add a normative reference.</td>
+</tr>
+</tbody>
+</table>
+<p>If ReSpec cannot find a cross-reference, it shows a warning or error in the rendered document.</p>
+</section>
+
+
+
+
+
+<section id="references">
+<h2>Add references</h2>
+<p>References are written inline.</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p&gt;The [^link^] element is defined in [[HTML]].&lt;/p&gt;
+&lt;p&gt;Conforming implementations MUST follow [[!RFC2119]].&lt;/p&gt;</code></pre>
+
+<p>Use:</p>
+<ul>
+<li><code class="language-text" translate="no">[[SPEC]]</code> for an informative reference.</li>
+<li><code class="language-text" translate="no">[[!SPEC]]</code> for a normative reference.</li>
+</ul>
+<p>ReSpec generates the references section automatically.</p>
+</section>
+
+
+
+
+
+<section id="examples-notes-issues-figures">
+<h2>Add examples, notes, issues, and figures</h2>
+<p>Use notes for helpful explanations:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;aside class="note" title="Implementation note"&gt;
+  &lt;p&gt;Implementations should handle network failure.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+
+<p>Use examples for sample code or concrete scenarios:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;aside class="example" title="Using the API"&gt;
+  &lt;pre class="js"&gt;
+const result = await doSomething();
+  &lt;/pre&gt;
+&lt;/aside&gt;</code></pre>
+
+<p>Use issues for open editorial or technical questions:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;p class="issue"&gt;
+  Decide whether this algorithm should reject or resolve.
+&lt;/p&gt;</code></pre>
+
+<p>Use figures with captions:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;figure id="fig-overview"&gt;
+  &lt;img src="overview.svg" alt="System overview diagram"&gt;
+  &lt;figcaption&gt;System overview.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;See &lt;a href="#fig-overview"&gt;&lt;/a&gt;.&lt;/p&gt;</code></pre>
+
+<p>ReSpec can number figures and fill in empty links to figures.</p>
+</section>
+
+
+
+
+
+<!-- <section id="webidl">
+<h2>Add WebIDL for APIs</h2>
+<p>If your specification defines a browser API, use a WebIDL block.</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;section data-dfn-for="Widget"&gt;
+  &lt;h2&gt;The &lt;code&gt;Widget&lt;/code&gt; interface&lt;/h2&gt;
+
+  &lt;pre class="idl"&gt;
+  [Exposed=Window]
+  interface Widget {
+    readonly attribute DOMString name;
+    undefined start();
+  };
+  &lt;/pre&gt;
+
+  &lt;p&gt;The &lt;dfn&gt;name&lt;/dfn&gt; attribute returns the widget name.&lt;/p&gt;
+  &lt;p&gt;The &lt;dfn&gt;start()&lt;/dfn&gt; method starts the widget.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+<p>The <code class="kw" translate="no">data-dfn-for="Widget"</code> attribute tells ReSpec that definitions in the section belong to the <code class="kw" translate="no">Widget</code> interface. The IDL block is highlighted and validated by ReSpec.</p>
+</section> -->
+
+
+
+
+
+<section id="markdown">
+<h2>Use Markdown if it helps</h2>
+<p>ReSpec can treat the whole document body as <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a>:</p>
+
+<pre class="example"><code class="language-js" translate="no">var respecConfig = {
+  format: "markdown"
+};</code></pre>
+
+<p>When using this mode, keep Markdown content aligned to the left margin because Markdown is whitespace-sensitive.</p>
+<p>You can also include a Markdown file in one section:</p>
+
+<pre class="example"><code class="language-html" translate="no">&lt;section data-include="my-section.md"
+         data-include-format="markdown"&gt;&lt;/section&gt;</code></pre>
+
+<p>HTML and Markdown can be mixed, but leave blank lines around Markdown content inside HTML elements.</p>
+</section>
+
+</div>
+
+<br style="clear: both;">
+
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
+</body>
+</html>
