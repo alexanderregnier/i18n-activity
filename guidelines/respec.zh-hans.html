@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
-<title>Working with ReSpec</title>
-<meta name="description" content="Helps members of the W3C Internationalization Activity work with ReSpec.">
+<title>使用ReSpec</title>
+<meta name="description" content="帮助W3C成员使用ReSpec。">
 <script>
 var f = { }
 
@@ -20,12 +20,12 @@ f.status = 'notreviewed';  // should be one of draft, review, published, notrevi
 f.path = '../' // what you need to prepend to a URL to get to the /International directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2026-05-13', time:'13:42'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2026-05-14', time:'09:38'} // date and time of latest edits to this document/translation
 f.contributors = ''; // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 
 // TRANSLATORS should fill in these assignments:
-f.translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+f.translators = '薛富侨'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
 
 f.breadcrumb = '';
 
@@ -33,7 +33,7 @@ f.additionalLinks = ''
 </script>
 <script src="respec-data/translations.js"> </script>
 <script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-zh-hans.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
 <script src="../../i18n-drafts/javascript/doc-structure/sitepage-2022.js"> </script>
 <script src="../../i18n-drafts/javascript/articletoc-2022.js"></script>
 <script src="../../i18n-drafts/javascript/prism.js"></script>
@@ -49,7 +49,7 @@ f.additionalLinks = ''
 <header>
   	<nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
 	</header>
-<h1>Working with ReSpec</h1>
+<h1>使用ReSpec</h1>
 
 
 <section id="sidebarExtras">
@@ -58,8 +58,8 @@ f.additionalLinks = ''
 
 <div id="mainLayout">
 <section>
-<p><a href="https://respec.org/docs/" target="_blank">ReSpec</a> is a tool for writing technical specifications as ordinary HTML. You write a source HTML file, add a small configuration object, and ReSpec turns it into a formatted specification with title, table of contents, section numbering, references, definitions, cross-links, notes, and export tools.</p>
-<p>This guide walks through the basics needed to create and preview a ReSpec document.</p>
+<p><a href="https://respec.org/docs/" target="_blank">ReSpec</a>是一个用HTML编写技术规范的工具。你编写一个源HTML文件，添加一个小的配置对象，ReSpec就会把它转换成格式化后的规范，其中包含标题、目录、节编号、参考文献、定义、交叉链接、注记和导出工具。</p>
+<p>本指南介绍创建和预览ReSpec文档所需的基础知识。</p>
 </section>
 
 
@@ -67,8 +67,8 @@ f.additionalLinks = ''
 
 
 <section id="minimal-file">
-<h2>Create a minimal ReSpec file</h2>
-<p>Start with an HTML file such as <code class="kw" translate="no">index.html</code>.</p>
+<h2>创建一个最小的ReSpec文件</h2>
+<p>从一个HTML文件开始，比如<code class="kw" translate="no">index.html</code>：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -114,10 +114,9 @@ f.additionalLinks = ''
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-<p>The two <code class="kw" translate="no">script</code> elements are important. The first loads ReSpec, and the second tells ReSpec how to build the document.</li>
-</ul>
-<p>Use <code translate="no">var respecConfig</code>, not <code translate="no">const</code> or <code translate="no">let</code>. ReSpec reads the configuration from <code translate="no">window.respecConfig</code>.</p>
-<p>The <code class="kw" translate="no">class="remove"</code> attribute tells ReSpec to remove those authoring scripts from exported static HTML.</p>
+<p>这两个<code class="kw" translate="no">script</code>元素很重要。第一个加载ReSpec，第二个告诉ReSpec如何构建文档。</p>
+<p>请使用<code translate="no">var respecConfig</code>，不要使用<code translate="no">const</code>或<code translate="no">let</code>。ReSpec会从<code translate="no">window.respecConfig</code>读取配置。</p>
+<p><code class="kw" translate="no">class="remove"</code>属性会告诉ReSpec在导出的静态HTML中移除这些编写文件时使用的脚本。</p>
 </section>
 
 
@@ -125,17 +124,17 @@ f.additionalLinks = ''
 
 
 <section id="preview">
-<h2>Preview the document locally</h2>
-<p>Do not open the file directly with <code class="kw" translate="no">file://</code>. Use a local HTTP server instead.</p>
-<p>If you have Python, you can run the following command from the directory containing your file:</p>
+<h2>在本地预览文档</h2>
+<p>不要直接通过<code class="kw" translate="no">file://</code>打开文件，用本地的HTTP服务器打开。</p>
+<p>如果你安装了 Python，可以在文件所在目录中运行以下命令：</p>
 
 <pre class="example"><code class="language-sh" translate="no">python3 -m http.server</code></pre>
 
-<p>Then open:</p>
+<p>然后打开：</p>
 
 <pre class="example"><code class="language-text" translate="no">http://localhost:8000/</code></pre>
 
-<p>Serving the file over HTTP matters because ReSpec may fetch references, cross-reference data, issue information, includes, or other resources.</p>
+<p>通过HTTP访问文档很重要，因为ReSpec可能需要获取参考文献、交叉引用数据、issue信息、包含文件或其他资源。</p>
 </section>
 
 
@@ -143,8 +142,8 @@ f.additionalLinks = ''
 
 
 <section id="configuration">
-<h2>Understand the basic configuration</h2>
-<p>A small configuration usually starts like this:</p>
+<h2>了解基本配置</h2>
+<p>一个小型配置通常像这样：</p>
 
 <pre class="example"><code class="language-js" translate="no">var respecConfig = {
   specStatus: "ED",
@@ -154,13 +153,13 @@ f.additionalLinks = ''
   group: "i18n"
 };</code></pre>
 
-<p>Common beginner options:</p>
+<p>初学者常用的选项：</p>
 <ul>
-<li><code class="kw" translate="no">specStatus</code>: the publication status. Use <code translate="no">"ED"</code> for an Editor's Draft while writing.</li>
-<li><code class="kw" translate="no">editors</code>: the people editing the document. Most W3C documents require at least one editor.</li>
-<li><code class="kw" translate="no">shortName</code>: the short identifier for the document.</li>
-<li><code class="kw" translate="no">github</code>: the repository used for feedback.</li>
-<li><code class="kw" translate="no">group</code>: the W3C group responsible for the document.</li>
+<li><code class="kw" translate="no">specStatus</code>：发布状态。编写编辑草案时使用<code translate="no">"ED"</code>。</li>
+<li><code class="kw" translate="no">editors</code>：文档编辑。大多数W3C文档至少需要一位编辑。</li>
+<li><code class="kw" translate="no">shortName</code>：文档的短标识符。</li>
+<li><code class="kw" translate="no">github</code>：用于反馈的仓库。</li>
+<li><code class="kw" translate="no">group</code>：负责该文档的W3C小组。</li>
 </ul>
 </section>
 
@@ -169,8 +168,8 @@ f.additionalLinks = ''
 
 
 <section id="sections">
-<h2>Write sections</h2>
-<p>ReSpec documents are HTML documents. Use <code class="kw" translate="no">section</code> elements with headings.</p>
+<h2>编写章节</h2>
+<p>ReSpec文档就是HTML文档，请使用带标题的<code class="kw" translate="no">section</code>元素。</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;section&gt;
   &lt;h2&gt;Concepts&lt;/h2&gt;
@@ -182,8 +181,8 @@ f.additionalLinks = ''
   &lt;/section&gt;
 &lt;/section&gt;</code></pre>
 
-<p>ReSpec automatically numbers sections and builds a table of contents. If your document is normative, use <code class="kw" translate="no">class="informative"</code> for explanatory material that is not normative.</p>
-<p>If you link to a section with an empty link, ReSpec fills in the section number and title automatically:</p>
+<p>ReSpec会自动为章节编号并生成目录。如果你的文档是规范性文档，请对非规范性的解释性材料使用<code class="kw" translate="no">class="informative"</code>。</p>
+<p>如果你使用空链接指向某个章节，ReSpec会自动填入章节编号和标题：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p&gt;See &lt;a href="#concepts"&gt;&lt;/a&gt;.&lt;/p&gt;</code></pre>
 </section>
@@ -193,24 +192,24 @@ f.additionalLinks = ''
 
 
 <section id="terms">
-<h2>Define and link terms</h2>
-<p>Use <code class="kw" translate="no">dfn</code> to define a term:</p>
+<h2>定义与链接术语</h2>
+<p>使用<code class="kw" translate="no">dfn</code>定义术语：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p&gt;A &lt;dfn&gt;request&lt;/dfn&gt; represents a pending operation.&lt;/p&gt;</code></pre>
 
-<p>Then link to it later:</p>
+<p>在后文链接到该术语：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p&gt;Each [=request=] has a state.&lt;/p&gt;</code></pre>
 
-<p>You can also use a plain HTML link:</p>
+<p>也可以使用普通的HTML链接：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p&gt;Each &lt;a&gt;request&lt;/a&gt; has a state.&lt;/p&gt;</code></pre>
 
-<p>If a term has multiple names, use <code class="kw" translate="no">data-lt</code>:</p>
+<p>如果一个术语有多个名称，请使用<code class="kw" translate="no">data-lt</code>：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p&gt;A &lt;dfn data-lt="user agent|browser"&gt;user agent&lt;/dfn&gt; loads the page.&lt;/p&gt;</code></pre>
 
-<p>Now <code class="language-text" translate="no">[=user agent=]</code> and <code class="language-text" translate="no">[=browser=]</code> link to the same definition.</p>
+<p>这样，<code class="language-text" translate="no">[=user agent=]</code>和<code class="language-text" translate="no">[=browser=]</code>都会链接到同一个定义。</p>
 </section>
 
 
@@ -218,53 +217,53 @@ f.additionalLinks = ''
 
 
 <section id="cross-references">
-<h2>Link to other specifications</h2>
-<p>ReSpec can link to terms defined in other specifications. Enable cross-reference support in the configuration:</p>
+<h2>链接到其他规范</h2>
+<p>ReSpec可以链接到其他规范中定义的术语。请在配置中启用交叉引用：</p>
 
 <pre class="example"><code class="language-js" translate="no">var respecConfig = {
   xref: "web-platform"
 };</code></pre>
 
-<p>Then use ReSpec shorthand:</p>
+<p>然后使用ReSpec的简写：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p&gt;Queue a task to [=fire an event=] at the {{Window}} object.&lt;/p&gt;</code></pre>
 
-<p>Common shorthand forms:</p>
+<p>常见的简写形式：</p>
 <table>
 <thead>
 <tr>
-<th>Shorthand</th>
-<th>Purpose</th>
+<th>简写</th>
+<th>用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code class="language-text" translate="no">[=term=]</code></td>
-<td>Link to a concept or definition.</td>
+<td>链接到概念或定义。</td>
 </tr>
 <tr>
 <td><code class="language-text" translate="no">{{Interface}}</code></td>
-<td>Link to a WebIDL interface.</td>
+<td>链接到WebIDL接口。</td>
 </tr>
 <tr>
 <td><code class="language-text" translate="no">{{Interface/member}}</code></td>
-<td>Link to a WebIDL attribute or method.</td>
+<td>链接到WebIDL属性或方法。</td>
 </tr>
 <tr>
 <td><code class="language-text" translate="no">[^element^]</code></td>
-<td>Link to an HTML or SVG element.</td>
+<td>链接到HTML或SVG元素。</td>
 </tr>
 <tr>
 <td><code class="language-text" translate="no">[[HTML]]</code></td>
-<td>Add an informative reference.</td>
+<td>添加资料性引用。</td>
 </tr>
 <tr>
 <td><code class="language-text" translate="no">[[!RFC2119]]</code></td>
-<td>Add a normative reference.</td>
+<td>添加规范性引用。</td>
 </tr>
 </tbody>
 </table>
-<p>If ReSpec cannot find a cross-reference, it shows a warning or error in the rendered document.</p>
+<p>如果ReSpec找不到交叉引用，它会在渲染后的文档中显示警告或错误。</p>
 </section>
 
 
@@ -272,14 +271,13 @@ f.additionalLinks = ''
 
 
 <section id="references">
-<h2>Add references</h2>
+<h2>添加引用</h2>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p&gt;The [^link^] element is defined in [[HTML]].&lt;/p&gt;
 &lt;p&gt;Conforming implementations MUST follow [[!RFC2119]].&lt;/p&gt;</code></pre>
 
-<p>Use <code class="language-text" translate="no">[[SPEC]]</code> for an informative reference, and <code class="language-text" translate="no">[[!SPEC]]</code> for a normative reference.</p>
-
-<p>ReSpec generates the references section automatically.</p>
+<p>使用<code class="language-text" translate="no">[[SPEC]]</code>表示资料性引用，<code class="language-text" translate="no">[[!SPEC]]</code>表示规范性引用。</p>
+<p>ReSpec会自动生成参考文献章节。</p>
 </section>
 
 
@@ -287,14 +285,14 @@ f.additionalLinks = ''
 
 
 <section id="examples-notes-issues-figures">
-<h2>Add examples, notes, issues, and figures</h2>
-<p>Use notes for helpful explanations:</p>
+<h2>添加示例、注、issue和图</h2>
+<p>用note提供有帮助的解释：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;aside class="note" title="Implementation note"&gt;
   &lt;p&gt;Implementations should handle network failure.&lt;/p&gt;
 &lt;/aside&gt;</code></pre>
 
-<p>Use examples for sample code or concrete scenarios:</p>
+<p>用example提供样例代码或具体场景：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;aside class="example" title="Using the API"&gt;
   &lt;pre class="js"&gt;
@@ -302,13 +300,13 @@ const result = await doSomething();
   &lt;/pre&gt;
 &lt;/aside&gt;</code></pre>
 
-<p>Use issues for open editorial or technical questions:</p>
+<p>用issue表示尚未解决的编辑性或技术性问题：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;p class="issue"&gt;
   Decide whether this algorithm should reject or resolve.
 &lt;/p&gt;</code></pre>
 
-<p>Use figures with captions:</p>
+<p>添加带说明文字的图：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;figure id="fig-overview"&gt;
   &lt;img src="overview.svg" alt="System overview diagram"&gt;
@@ -317,7 +315,7 @@ const result = await doSomething();
 
 &lt;p&gt;See &lt;a href="#fig-overview"&gt;&lt;/a&gt;.&lt;/p&gt;</code></pre>
 
-<p>ReSpec can number figures and fill in empty links to figures.</p>
+<p>ReSpec可以为图编号，并填充指向图的空链接。</p>
 </section>
 
 
@@ -325,25 +323,8 @@ const result = await doSomething();
 
 
 <!-- <section id="webidl">
-<h2>Add WebIDL for APIs</h2>
-<p>If your specification defines a browser API, use a WebIDL block.</p>
+<h2>为API添加WebIDL</h2>
 
-<pre class="example"><code class="language-html" translate="no">&lt;section data-dfn-for="Widget"&gt;
-  &lt;h2&gt;The &lt;code&gt;Widget&lt;/code&gt; interface&lt;/h2&gt;
-
-  &lt;pre class="idl"&gt;
-  [Exposed=Window]
-  interface Widget {
-    readonly attribute DOMString name;
-    undefined start();
-  };
-  &lt;/pre&gt;
-
-  &lt;p&gt;The &lt;dfn&gt;name&lt;/dfn&gt; attribute returns the widget name.&lt;/p&gt;
-  &lt;p&gt;The &lt;dfn&gt;start()&lt;/dfn&gt; method starts the widget.&lt;/p&gt;
-&lt;/section&gt;</code></pre>
-
-<p>The <code class="kw" translate="no">data-dfn-for="Widget"</code> attribute tells ReSpec that definitions in the section belong to the <code class="kw" translate="no">Widget</code> interface. The IDL block is highlighted and validated by ReSpec.</p>
 </section> -->
 
 
@@ -351,20 +332,20 @@ const result = await doSomething();
 
 
 <section id="markdown">
-<h2>Use Markdown if it helps</h2>
-<p>ReSpec can treat the whole document body as <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a>:</p>
+<h2>需要时使用Markdown</h2>
+<p>ReSpec可以把整个文档正文当作<a href="https://github.github.com/gfm/">GitHub风格Markdown</a>来处理：</p>
 
 <pre class="example"><code class="language-js" translate="no">var respecConfig = {
   format: "markdown"
 };</code></pre>
 
-<p>When using this mode, keep Markdown content aligned to the left margin because Markdown is whitespace-sensitive.</p>
-<p>You can also include a Markdown file in one section:</p>
+<p>使用此模式时，请让Markdown内容与左边对齐，因为Markdown对空白字符敏感。</p>
+<p>也可以在一个章节中包含Markdown文件：</p>
 
 <pre class="example"><code class="language-html" translate="no">&lt;section data-include="my-section.md"
          data-include-format="markdown"&gt;&lt;/section&gt;</code></pre>
 
-<p>HTML and Markdown can be mixed, but leave blank lines around Markdown content inside HTML elements.</p>
+<p>HTML和Markdown可以混用，但HTML元素内的Markdown内容前后需要留空行。</p>
 </section>
 
 </div>
