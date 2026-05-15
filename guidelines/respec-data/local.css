@@ -2,3 +2,10 @@ pre.example {
   margin-inline-start: 7.5%;
   margin-inline-end: 32%;
 }
+
+@media (max-width: 767px) {
+  pre.example {
+    margin-inline-start: 5% !important;
+    margin-inline-end: 5%;
+  }
+}
