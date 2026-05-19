@@ -17,3 +17,11 @@ If you want to contribute to discussions pointed to by the issues in this repo, 
 - [WG home page](https://www.w3.org/International/i18n-activity/i18n-wg/)
 - [Action tracker](https://github.com/w3c/i18n-actions/issues/)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
+
+### Guidelines
+- [Editorial guidelines](https://w3c.github.io/i18n-activity/guidelines/editing.html)
+- [GitHub guidelines](https://w3c.github.io/i18n-activity/guidelines/github.html)
+- [ReSpec guidelines](https://w3c.github.io/i18n-activity/guidelines/respec.html)
+- [Review instructions](https://w3c.github.io/i18n-activity/guidelines/review-instructions.html)
+- [Working with issues](https://w3c.github.io/i18n-activity/guidelines/issues.html)
+- [Language enablement labels](https://w3c.github.io/i18n-activity/guidelines/le-labels.html)
